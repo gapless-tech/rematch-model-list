@@ -53,9 +53,6 @@
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4"
   },
-  "files": [
-    "dist"
-  ],
   "dependencies": {
     "lodash": "^4.17.11"
   }
