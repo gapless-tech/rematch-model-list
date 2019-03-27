@@ -1,6 +1,6 @@
 {
   "name": "@gapless-tech/rematch-model-list",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create customizable Rematch models that are lists, using the convention byId and allIds",
   "author": "gapless-tech",
   "license": "MIT",
