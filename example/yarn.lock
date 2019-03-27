@@ -9,6 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@gapless-tech/rematch-model-list@link:..":
+  version "0.0.0"
+  uid ""
+
 "@rematch/core@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rematch/core/-/core-1.1.0.tgz#702aa1d20420cec403d16626cbb7730f9b1a756d"
@@ -6627,10 +6631,6 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
-
-"rematch-model-list@link:..":
-  version "0.0.0"
-  uid ""
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
