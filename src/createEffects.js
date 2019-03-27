@@ -1,6 +1,6 @@
 import { noop } from 'lodash';
 
-export default (modelName, defaultListName, api, effects) => dispatch => {
+export default (modelName, defaultListName, idKey, api, effects) => dispatch => {
   const ownDispatch = dispatch[modelName];
 
   const baseEffects = {
@@ -71,7 +71,7 @@ export default (modelName, defaultListName, api, effects) => dispatch => {
       onFinish = noop
     }) {
       try {
-        const response = await api.update(data.id, data);
+        const response = await api.update(data[idKey], data);
         onSuccess(response);
 
         if (updateList) {

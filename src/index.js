@@ -17,7 +17,7 @@ export default (
 ) => ({
   state: createInitialState(listNames, initialState),
   reducers: createReducers(listNames[0], idKey, reducers),
-  effects: createEffects(modelName, listNames[0], api, effects),
+  effects: createEffects(modelName, listNames[0], idKey, api, effects),
   selectors: createSelectors(modelName, listNames[0], selectors),
   name: modelName
 });
