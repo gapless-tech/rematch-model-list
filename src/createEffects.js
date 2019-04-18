@@ -9,12 +9,13 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
       params,
       onSuccess = noop,
       onFail = noop,
-      onFinish = noop
+      onFinish = noop,
+      ...rest
     } = {}) {
       try {
         const data = await api.get(params);
         onSuccess(data);
-        ownDispatch.write({ data, listName });
+        ownDispatch.write({ data, listName, ...rest });
       } catch (error) {
         onFail(error);
       } finally {
