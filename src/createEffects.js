@@ -53,7 +53,7 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
         onSuccess(response);
 
         if (updateList) {
-          ownDispatch.getAsync({ listName });
+          await ownDispatch.getAsync({ listName });
         }
       } catch (error) {
         onFail(error);
@@ -75,7 +75,7 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
         onSuccess(response);
 
         if (updateList) {
-          ownDispatch.getAsync({ listName });
+          await ownDispatch.getAsync({ listName });
         }
       } catch (error) {
         onFail(error);
@@ -97,7 +97,7 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
         await api.remove(id, params);
         onSuccess();
         if (updateList) {
-          ownDispatch.getAsync({ listName });
+          await ownDispatch.getAsync({ listName });
         }
       } catch (error) {
         onFail();

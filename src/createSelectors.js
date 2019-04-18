@@ -3,8 +3,8 @@ export default (modelName, defaultListName, selectors) =>
     {},
     {
       getById: () => (rootState, id) => rootState[modelName].byId[id],
-      list: () => (rootState, listName = defaultListName) =>
-        rootState[modelName][listName].map(id => rootState[modelName].byId[id])
+      list: (select) => (rootState, listName = defaultListName) =>
+        rootState[modelName][listName].map(id => select[modelName].getById(rootState, id))
     },
     selectors
   );

@@ -12,7 +12,7 @@ export default (
     initialState,
     reducers,
     effects,
-    selectors
+    selectors,
   } = {}
 ) => ({
   state: createInitialState(listNames, initialState),
