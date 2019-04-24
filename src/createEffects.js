@@ -1,6 +1,12 @@
 import { noop } from 'lodash';
 
-export default (modelName, defaultListName, idKey, api, effects) => dispatch => {
+export default (
+  modelName,
+  defaultListName,
+  idKey,
+  api,
+  effects
+) => dispatch => {
   const ownDispatch = dispatch[modelName];
 
   const baseEffects = {
@@ -17,7 +23,10 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
         onSuccess(data);
         ownDispatch.write({ data, listName, ...rest });
       } catch (error) {
-        onFail(error);
+        if (onFail) {
+          onFail(error);
+        }
+        throw error;
       } finally {
         onFinish();
       }
@@ -35,7 +44,10 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
         onSuccess(data);
         ownDispatch.writeById({ id, data });
       } catch (error) {
-        onFail(error);
+        if (onFail) {
+          onFail(error);
+        }
+        throw error;
       } finally {
         onFinish();
       }
@@ -57,7 +69,10 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
           await ownDispatch.getAsync({ listName });
         }
       } catch (error) {
-        onFail(error);
+        if (onFail) {
+          onFail(error);
+        }
+        throw error;
       } finally {
         onFinish();
       }
@@ -79,7 +94,10 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
           await ownDispatch.getAsync({ listName });
         }
       } catch (error) {
-        onFail(error);
+        if (onFail) {
+          onFail(error);
+        }
+        throw error;
       } finally {
         onFinish();
       }
@@ -101,7 +119,10 @@ export default (modelName, defaultListName, idKey, api, effects) => dispatch => 
           await ownDispatch.getAsync({ listName });
         }
       } catch (error) {
-        onFail();
+        if (onFail) {
+          onFail(error);
+        }
+        throw error;
       } finally {
         onFinish();
       }
