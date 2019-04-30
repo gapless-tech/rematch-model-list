@@ -12,12 +12,20 @@ export default (
     initialState,
     reducers,
     effects,
-    selectors,
+    selectors
   } = {}
-) => ({
-  state: createInitialState(listNames, initialState),
-  reducers: createReducers(listNames[0], idKey, reducers),
-  effects: createEffects(modelName, listNames[0], idKey, api, effects),
-  selectors: createSelectors(modelName, listNames[0], selectors),
-  name: modelName
-});
+) => {
+  if (!api) {
+    throw new Error(
+      '[REMATCH_MODEL_LIST] An API service is required. Pass an object with these methods: get, getById, update, create and remove.'
+    );
+  }
+
+  return {
+    state: createInitialState(listNames, initialState),
+    reducers: createReducers(listNames[0], idKey, reducers),
+    effects: createEffects(modelName, listNames[0], idKey, api, effects),
+    selectors: createSelectors(modelName, listNames[0], selectors),
+    name: modelName
+  };
+};
