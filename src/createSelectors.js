@@ -6,9 +6,9 @@ export default (modelName, defaultListName, selectors) =>
     {
       getById: () => (rootState, id) => rootState[modelName].byId[id],
       list: select => (rootState, listName = defaultListName) =>
-        rootState[modelName][listName].map(id =>
-          select[modelName].getById(rootState, id)
-        ),
+        (rootState[modelName][listName] || [])
+          .map(id => select[modelName].getById(rootState, id))
+          .filter(item => item),
       getPagination: () => (rootState, listName = defaultListName) =>
         rootState[modelName].pagination[listName] || { pages: {} },
       getNextPageParams: () => (rootState, listName = defaultListName) =>
