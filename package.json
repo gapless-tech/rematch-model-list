@@ -51,7 +51,7 @@
     "pretty-quick": "^1.10.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^3.1.0"
   },
   "dependencies": {
     "lodash": "^4.17.11"
