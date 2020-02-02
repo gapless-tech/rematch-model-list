@@ -5,14 +5,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@rematch/core": "^1.1.0",
-    "@rematch/select": "^2.0.4",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-redux": "^6.0.1",
-    "react-scripts": "^1.1.4",
-    "@gapless-tech/rematch-model-list": "link:.."
+    "@gapless-tech/rematch-model-list": "link:..",
+    "@rematch/core": "^1.3.0",
+    "@rematch/select": "^2.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-scripts": "^3.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
