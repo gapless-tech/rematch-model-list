@@ -958,8 +958,9 @@
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
 "@gapless-tech/rematch-model-list@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.7"
+  dependencies:
+    lodash "^4.17.11"
 
 "@hapi/address@2.x.x":
   version "2.1.4"
